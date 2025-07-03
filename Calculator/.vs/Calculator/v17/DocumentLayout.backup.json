@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\Programming\\dotnet_workspace\\Calculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A89F410A-D502-439F-B31E-AB656275F8C7}|Calculator\\Calculator.csproj|e:\\programming\\dotnet_workspace\\calculator\\calculator\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A89F410A-D502-439F-B31E-AB656275F8C7}|Calculator\\Calculator.csproj|solutionrelative:calculator\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A89F410A-D502-439F-B31E-AB656275F8C7}|Calculator\\Calculator.csproj|e:\\programming\\dotnet_workspace\\calculator\\calculator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A89F410A-D502-439F-B31E-AB656275F8C7}|Calculator\\Calculator.csproj|solutionrelative:calculator\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A89F410A-D502-439F-B31E-AB656275F8C7}|Calculator\\Calculator.csproj|e:\\programming\\dotnet_workspace\\calculator\\calculator\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A89F410A-D502-439F-B31E-AB656275F8C7}|Calculator\\Calculator.csproj|solutionrelative:calculator\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\Calculator\\Calculator\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Calculator\\MainWindow.xaml",
@@ -34,13 +34,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\Calculator\\Calculator\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Calculator\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\Calculator\\Calculator\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "Calculator\\MainWindow.xaml.cs*",
-              "ViewState": "AgIAAIAAAAAAAAAAAIA+wEwAAABFAAAAAAAAAA==",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\Calculator\\Calculator\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Calculator\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAcwKAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-28T18:45:24.807Z",
               "EditorCaption": ""
