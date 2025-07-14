@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\App.xaml
-2-1772605110
+3-1961996713
 
-61470095085
+7-1557898895
 202-1009917631
-MainWindow.xaml;NewContactWindow.xaml;
+ContactDetailsWindow.xaml;MainWindow.xaml;NewContactWindow.xaml;
 
 False
 

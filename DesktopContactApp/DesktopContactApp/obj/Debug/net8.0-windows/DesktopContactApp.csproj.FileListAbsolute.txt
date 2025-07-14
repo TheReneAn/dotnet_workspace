@@ -49,3 +49,5 @@ E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\bin\Debug\ne
 E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\bin\Debug\net8.0-windows\runtimes\win-x86\native\e_sqlcipher.dll
 E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\obj\Debug\net8.0-windows\DesktopContactApp.csproj.AssemblyReference.cache
 E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\obj\Debug\net8.0-windows\DesktopC.7A4641C2.Up2Date
+E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\obj\Debug\net8.0-windows\ContactDetailsWindow.g.cs
+E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\obj\Debug\net8.0-windows\ContactDetailsWindow.baml

@@ -31,9 +31,9 @@ namespace DesktopContactApp
             // Create a new Contact object from user input
             Contact newContact = new Contact
             {
-                Name = nameTextBox.Text,
-                Email = emailTextBox.Text,
-                Phone = phoneTextBox.Text
+                Name = NameTextBox.Text,
+                Email = EmailTextBox.Text,
+                Phone = PhoneTextBox.Text
             };
 
             using (SQLiteConnection connection = new SQLiteConnection(App.dataBasePath))

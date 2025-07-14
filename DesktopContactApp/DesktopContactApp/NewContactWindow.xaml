@@ -5,15 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopContactApp"
         mc:Ignorable="d"
-        Title="NewContactWindow" Height="450" Width="800">
-    
+        Title="NewContactWindow" Height="350" Width="525">
+
     <StackPanel Margin="10">
-        <TextBox x:Name="nameTextBox" 
-            Margin="0,0,0,5"/>
-        <TextBox x:Name="emailTextBox" 
-            Margin="0,0,0,5"/>
-        <TextBox x:Name="phoneTextBox" 
-            Margin="0,0,0,5"/>
+        <TextBox x:Name="NameTextBox" 
+            Margin="0,0,0,5"
+            ToolTip="Enter Name"/>
+        <TextBox x:Name="EmailTextBox" 
+            Margin="0,0,0,5"
+            ToolTip="Enter Email"/>
+        <TextBox x:Name="PhoneTextBox" 
+            Margin="0,0,0,5"
+            ToolTip="Enter Phone"/>
         <Button Content="Save" 
             Margin="0,0,0,5" 
             Click="SaveButton_Click"/>
