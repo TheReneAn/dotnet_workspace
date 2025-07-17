@@ -5,6 +5,9 @@
     <Compile Update="ContactDetailsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\ContactControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="NewContactWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

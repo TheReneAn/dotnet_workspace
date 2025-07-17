@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj": {}
+    "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj": {}
   },
   "projects": {
-    "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj": {
+    "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj",
+        "projectUniqueName": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj",
         "projectName": "DesktopContactApp",
-        "projectPath": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj",
-        "packagesPath": "C:\\Users\\ReneHOME\\.nuget\\packages\\",
-        "outputPath": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\obj\\",
+        "projectPath": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj",
+        "packagesPath": "C:\\Users\\tunce\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ReneHOME\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tunce\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

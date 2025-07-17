@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "mzyW8BR2atU=",
+  "dgSpecHash": "SThbrPNdGV8=",
   "success": true,
-  "projectFilePath": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj",
+  "projectFilePath": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\DesktopContactApp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlite-net-sqlcipher\\1.9.172\\sqlite-net-sqlcipher.1.9.172.nupkg.sha512",
-    "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlcipher\\2.1.2\\sqlitepclraw.bundle_e_sqlcipher.2.1.2.nupkg.sha512",
-    "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
-    "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlitepclraw.lib.e_sqlcipher\\2.1.2\\sqlitepclraw.lib.e_sqlcipher.2.1.2.nupkg.sha512",
-    "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlitepclraw.provider.e_sqlcipher\\2.1.2\\sqlitepclraw.provider.e_sqlcipher.2.1.2.nupkg.sha512",
-    "C:\\Users\\ReneHOME\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\tunce\\.nuget\\packages\\sqlite-net-sqlcipher\\1.9.172\\sqlite-net-sqlcipher.1.9.172.nupkg.sha512",
+    "C:\\Users\\tunce\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlcipher\\2.1.2\\sqlitepclraw.bundle_e_sqlcipher.2.1.2.nupkg.sha512",
+    "C:\\Users\\tunce\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
+    "C:\\Users\\tunce\\.nuget\\packages\\sqlitepclraw.lib.e_sqlcipher\\2.1.2\\sqlitepclraw.lib.e_sqlcipher.2.1.2.nupkg.sha512",
+    "C:\\Users\\tunce\\.nuget\\packages\\sqlitepclraw.provider.e_sqlcipher\\2.1.2\\sqlitepclraw.provider.e_sqlcipher.2.1.2.nupkg.sha512",
+    "C:\\Users\\tunce\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
   ],
   "logs": []
 }

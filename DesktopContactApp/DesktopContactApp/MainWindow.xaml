@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopContactApp"
+        xmlns:uc="clr-namespace:DesktopContactApp.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     
@@ -16,15 +17,18 @@
 
         <ListView x:Name="ContactsListView"
                   SelectionChanged="ContactsListView_SelectionChanged"
-                  Height="280"
+                  Height="365"
                   Margin="0,5,0,0">
+
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Margin="5">
-                        <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold" Margin="0,0,10,0"/>
-                        <TextBlock Text="{Binding Email}" FontSize="15" Foreground="DodgerBlue" Margin="0,0,10,0"/>
-                        <TextBlock Text="{Binding Phone}" FontSize="15" FontStyle="Italic" Margin="0,0,10,0"/>
-                    </StackPanel>
+                    <uc:ContactControl Contact="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

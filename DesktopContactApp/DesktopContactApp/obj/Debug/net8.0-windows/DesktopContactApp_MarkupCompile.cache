@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\obj\Debug\net8.0-windows\
+C:\Users\tunce\Desktop\dotnet_workspace\DesktopContactApp\DesktopContactApp\obj\Debug\net8.0-windows\
 DesktopContactApp
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-E:\Programming\dotnet_workspace\DesktopContactApp\DesktopContactApp\App.xaml
-3-1961996713
+C:\Users\tunce\Desktop\dotnet_workspace\DesktopContactApp\DesktopContactApp\App.xaml
+4-993155439
 
-7-1557898895
-202-1009917631
-ContactDetailsWindow.xaml;MainWindow.xaml;NewContactWindow.xaml;
+8-831616576
+202798873704
+ContactDetailsWindow.xaml;Controls\ContactControl.xaml;MainWindow.xaml;NewContactWindow.xaml;
 
 False
 

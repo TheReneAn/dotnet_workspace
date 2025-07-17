@@ -1,38 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\",
+  "WorkspaceRootPath": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|e:\\programming\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\contactdetailswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\contactdetailswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|e:\\programming\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\contactdetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\contactdetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|e:\\programming\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\newcontactwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\newcontactwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\newcontactwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|e:\\programming\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\newcontactwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\newcontactwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\contactdetailswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\contactdetailswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|e:\\programming\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\contactdetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\contactdetailswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|e:\\programming\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\newcontactwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\newcontactwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\controls\\contactcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\controls\\contactcontrol.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\controls\\contactcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\controls\\contactcontrol.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|e:\\programming\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\classes\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\classes\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|e:\\programming\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\classes\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\classes\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|c:\\users\\tunce\\desktop\\dotnet_workspace\\desktopcontactapp\\desktopcontactapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AD59BE3-3FD9-40D5-A64B-A7F321E183E9}|DesktopContactApp\\DesktopContactApp.csproj|solutionrelative:desktopcontactapp\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,15 +50,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Contact.cs",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\Classes\\Contact.cs",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\Classes\\Contact.cs",
               "RelativeDocumentMoniker": "DesktopContactApp\\Classes\\Contact.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\Classes\\Contact.cs",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\Classes\\Contact.cs",
               "RelativeToolTip": "DesktopContactApp\\Classes\\Contact.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -60,25 +68,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "App.xaml.cs",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\App.xaml.cs",
               "RelativeDocumentMoniker": "DesktopContactApp\\App.xaml.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\App.xaml.cs",
               "RelativeToolTip": "DesktopContactApp\\App.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-12T22:18:19.154Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\MainWindow.xaml",
               "RelativeDocumentMoniker": "DesktopContactApp\\MainWindow.xaml",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\MainWindow.xaml",
               "RelativeToolTip": "DesktopContactApp\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-12T18:14:20.916Z",
@@ -86,24 +93,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "DesktopContactApp\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\MainWindow.xaml.cs",
-              "RelativeToolTip": "DesktopContactApp\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T19:09:19.594Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "NewContactWindow.xaml",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\NewContactWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\NewContactWindow.xaml",
               "RelativeDocumentMoniker": "DesktopContactApp\\NewContactWindow.xaml",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\NewContactWindow.xaml",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\NewContactWindow.xaml",
               "RelativeToolTip": "DesktopContactApp\\NewContactWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-12T19:09:23.451Z",
@@ -111,40 +105,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NewContactWindow.xaml.cs",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\NewContactWindow.xaml.cs",
-              "RelativeDocumentMoniker": "DesktopContactApp\\NewContactWindow.xaml.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\NewContactWindow.xaml.cs",
-              "RelativeToolTip": "DesktopContactApp\\NewContactWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T19:09:24.36Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ContactDetailsWindow.xaml",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\ContactDetailsWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\ContactDetailsWindow.xaml",
               "RelativeDocumentMoniker": "DesktopContactApp\\ContactDetailsWindow.xaml",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\ContactDetailsWindow.xaml",
-              "RelativeToolTip": "DesktopContactApp\\ContactDetailsWindow.xaml",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\ContactDetailsWindow.xaml*",
+              "RelativeToolTip": "DesktopContactApp\\ContactDetailsWindow.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-14T00:48:55.03Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ContactDetailsWindow.xaml.cs",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\ContactDetailsWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\ContactDetailsWindow.xaml.cs",
               "RelativeDocumentMoniker": "DesktopContactApp\\ContactDetailsWindow.xaml.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\ContactDetailsWindow.xaml.cs*",
-              "RelativeToolTip": "DesktopContactApp\\ContactDetailsWindow.xaml.cs*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAWAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\ContactDetailsWindow.xaml.cs",
+              "RelativeToolTip": "DesktopContactApp\\ContactDetailsWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-14T00:48:56.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NewContactWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\NewContactWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DesktopContactApp\\NewContactWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\NewContactWindow.xaml.cs",
+              "RelativeToolTip": "DesktopContactApp\\NewContactWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T19:09:24.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ContactControl.xaml",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\Controls\\ContactControl.xaml",
+              "RelativeDocumentMoniker": "DesktopContactApp\\Controls\\ContactControl.xaml",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\Controls\\ContactControl.xaml",
+              "RelativeToolTip": "DesktopContactApp\\Controls\\ContactControl.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-17T18:12:12.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ContactControl.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\Controls\\ContactControl.xaml.cs",
+              "RelativeDocumentMoniker": "DesktopContactApp\\Controls\\ContactControl.xaml.cs",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\Controls\\ContactControl.xaml.cs",
+              "RelativeToolTip": "DesktopContactApp\\Controls\\ContactControl.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-17T18:12:17.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DesktopContactApp\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\tunce\\Desktop\\dotnet_workspace\\DesktopContactApp\\DesktopContactApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "DesktopContactApp\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T19:09:19.594Z",
               "EditorCaption": ""
             }
           ]
