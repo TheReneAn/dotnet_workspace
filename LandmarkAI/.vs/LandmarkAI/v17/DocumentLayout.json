@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\Programming\\dotnet_workspace\\LandmarkAI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B4AA103A-E1C2-40CB-A527-2E14B935B8E3}|LandmarkAI\\LandmarkAI.csproj|e:\\programming\\dotnet_workspace\\landmarkai\\landmarkai\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4AA103A-E1C2-40CB-A527-2E14B935B8E3}|LandmarkAI\\LandmarkAI.csproj|solutionrelative:landmarkai\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B4AA103A-E1C2-40CB-A527-2E14B935B8E3}|LandmarkAI\\LandmarkAI.csproj|e:\\programming\\dotnet_workspace\\landmarkai\\landmarkai\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B4AA103A-E1C2-40CB-A527-2E14B935B8E3}|LandmarkAI\\LandmarkAI.csproj|solutionrelative:landmarkai\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4AA103A-E1C2-40CB-A527-2E14B935B8E3}|LandmarkAI\\LandmarkAI.csproj|e:\\programming\\dotnet_workspace\\landmarkai\\landmarkai\\classes\\customvision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4AA103A-E1C2-40CB-A527-2E14B935B8E3}|LandmarkAI\\LandmarkAI.csproj|solutionrelative:landmarkai\\classes\\customvision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B4AA103A-E1C2-40CB-A527-2E14B935B8E3}|LandmarkAI\\LandmarkAI.csproj|e:\\programming\\dotnet_workspace\\landmarkai\\landmarkai\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4AA103A-E1C2-40CB-A527-2E14B935B8E3}|LandmarkAI\\LandmarkAI.csproj|solutionrelative:landmarkai\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "CustomVision.cs",
               "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\LandmarkAI\\LandmarkAI\\Classes\\CustomVision.cs",
               "RelativeDocumentMoniker": "LandmarkAI\\Classes\\CustomVision.cs",
@@ -39,7 +39,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\LandmarkAI\\LandmarkAI\\MainWindow.xaml",
               "RelativeDocumentMoniker": "LandmarkAI\\MainWindow.xaml",
@@ -51,13 +51,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\LandmarkAI\\LandmarkAI\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "LandmarkAI\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\LandmarkAI\\LandmarkAI\\MainWindow.xaml.cs",
-              "RelativeToolTip": "LandmarkAI\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAwAAAAAAAAAA==",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\LandmarkAI\\LandmarkAI\\MainWindow.xaml.cs*",
+              "RelativeToolTip": "LandmarkAI\\MainWindow.xaml.cs*",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCkAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-19T21:15:19.904Z",
               "EditorCaption": ""
