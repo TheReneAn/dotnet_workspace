@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "E:\\Programming\\dotnet_workspace\\WeatherApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|e:\\programming\\dotnet_workspace\\weatherapp\\weatherapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|e:\\programming\\dotnet_workspace\\weatherapp\\weatherapp\\viewmodel\\weathervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\viewmodel\\weathervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|e:\\programming\\dotnet_workspace\\weatherapp\\weatherapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|e:\\programming\\dotnet_workspace\\weatherapp\\weatherapp\\view\\weatherwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\view\\weatherwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|e:\\programming\\dotnet_workspace\\weatherapp\\weatherapp\\viewmodel\\helpers\\accuweatherhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\viewmodel\\helpers\\accuweatherhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|e:\\programming\\dotnet_workspace\\weatherapp\\weatherapp\\view\\weatherwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\view\\weatherwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9C5B56C3-D8BC-433E-BE49-CD6EFC351BF2}|WeatherApp\\WeatherApp.csproj|e:\\programming\\dotnet_workspace\\weatherapp\\weatherapp\\model\\currentconditions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,8 +34,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherVM.cs",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\ViewModel\\WeatherVM.cs",
+              "RelativeDocumentMoniker": "WeatherApp\\ViewModel\\WeatherVM.cs",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\ViewModel\\WeatherVM.cs",
+              "RelativeToolTip": "WeatherApp\\ViewModel\\WeatherVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T01:00:16.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherWindow.xaml",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\View\\WeatherWindow.xaml",
+              "RelativeDocumentMoniker": "WeatherApp\\View\\WeatherWindow.xaml",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\View\\WeatherWindow.xaml",
+              "RelativeToolTip": "WeatherApp\\View\\WeatherWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-07-22T00:39:11.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\View\\WeatherWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WeatherApp\\View\\WeatherWindow.xaml.cs",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\View\\WeatherWindow.xaml.cs",
+              "RelativeToolTip": "WeatherApp\\View\\WeatherWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T00:39:37.388Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -40,14 +82,14 @@
               "RelativeDocumentMoniker": "WeatherApp\\ViewModel\\Helpers\\AccuWeatherHelper.cs",
               "ToolTip": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\ViewModel\\Helpers\\AccuWeatherHelper.cs",
               "RelativeToolTip": "WeatherApp\\ViewModel\\Helpers\\AccuWeatherHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-20T22:13:05.277Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CurrentConditions.cs",
               "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\Model\\CurrentConditions.cs",
               "RelativeDocumentMoniker": "WeatherApp\\Model\\CurrentConditions.cs",
@@ -60,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "City.cs",
               "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\Model\\City.cs",
               "RelativeDocumentMoniker": "WeatherApp\\Model\\City.cs",
@@ -69,31 +111,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-20T19:45:10.688Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "WeatherApp\\MainWindow.xaml",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\MainWindow.xaml",
-              "RelativeToolTip": "WeatherApp\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-07-20T19:44:09.227Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WeatherApp\\MainWindow.xaml.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\WeatherApp\\WeatherApp\\MainWindow.xaml.cs",
-              "RelativeToolTip": "WeatherApp\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-20T19:44:07.107Z",
               "EditorCaption": ""
             }
           ]
