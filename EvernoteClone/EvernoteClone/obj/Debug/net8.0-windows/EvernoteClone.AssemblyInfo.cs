@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EvernoteClone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abf931060f5f583cd00dc18d45a11cba09d8c057")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51267fd56cf9ed464f3ebe81bd9ef7f3d97760fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("EvernoteClone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EvernoteClone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
