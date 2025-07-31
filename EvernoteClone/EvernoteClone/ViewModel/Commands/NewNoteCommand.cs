@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EvernoteClone.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,19 @@ namespace EvernoteClone.ViewModel.Commands
 
         public bool CanExecute(object? parameter)
         {
-            return true; // Always allow execution for now
+            Notebook? selectedNotebook = parameter as Notebook;
+            if (selectedNotebook != null)
+            {
+                return true;
+            }
+
+            return false; // Disable command if no notebook is selected
         }
 
         public void Execute(object? parameter)
         {
-            // TODO: Implement functionality to create a new notebook
+            Notebook? selectedNotebook = parameter as Notebook;
+            NoteVM.CreateNote(selectedNotebook?.Id ?? 0);
         }
     }
 }
