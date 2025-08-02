@@ -1,30 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace EvernoteClone.ViewModel.Commands
 {
     public class RegisterCommand : ICommand
     {
-        public LoginVM LoginVM { get; set; }
+        public LoginVM ViewModel { get; set; }
+        public event EventHandler CanExecuteChanged;
 
-        public event EventHandler? CanExecuteChanged;
-        public RegisterCommand(LoginVM loginVM)
+        public RegisterCommand(LoginVM vm)
         {
-            LoginVM = loginVM;
+            ViewModel = vm;
         }
 
-        public bool CanExecute(object? parameter)
+        public bool CanExecute(object parameter)
         {
-            return true; // Always allow execution for now
+            return true;
         }
 
-        public void Execute(object? parameter)
+        public void Execute(object parameter)
         {
-            // TODO: Login functionality
+            //TODO: Call register from ViewModel
         }
     }
 }

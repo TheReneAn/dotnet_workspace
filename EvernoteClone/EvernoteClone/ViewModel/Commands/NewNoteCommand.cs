@@ -1,39 +1,36 @@
 ﻿using EvernoteClone.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace EvernoteClone.ViewModel.Commands
 {
     public class NewNoteCommand : ICommand
     {
-        public NotesVM NoteVM { get; set; }
+        public NotesVM ViewModel { get; set; }
 
-        public event EventHandler? CanExecuteChanged;
-
-        public NewNoteCommand(NotesVM notesVM)
+        public event EventHandler CanExecuteChanged
         {
-            NoteVM = notesVM;
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public bool CanExecute(object? parameter)
+        public NewNoteCommand(NotesVM vm)
         {
-            Notebook? selectedNotebook = parameter as Notebook;
-            if (selectedNotebook != null)
-            {
-                return true;
-            }
-
-            return false; // Disable command if no notebook is selected
+            ViewModel = vm;
         }
 
-        public void Execute(object? parameter)
+        public bool CanExecute(object parameter)
         {
-            Notebook? selectedNotebook = parameter as Notebook;
-            NoteVM.CreateNote(selectedNotebook?.Id ?? 0);
+            Notebook selectedNotebook = parameter as Notebook;
+            return selectedNotebook != null ? true : false;
+        }
+
+        public void Execute(object parameter)
+        {
+            Notebook selectedNotebook = parameter as Notebook;
+            ViewModel.CreateNote(selectedNotebook.Id);
         }
     }
 }

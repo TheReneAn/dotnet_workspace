@@ -1,31 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.ComponentModel;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace EvernoteClone.ViewModel.Commands
 {
     public class NewNotebookCommand : ICommand
     {
-        public NotesVM NoteVM { get; set; }
+        public NotesVM ViewModel { get; set; }
 
-        public event EventHandler? CanExecuteChanged;
+        public event EventHandler CanExecuteChanged;
 
-        public NewNotebookCommand(NotesVM notesVM)
+        public NewNotebookCommand(NotesVM vm)
         {
-            NoteVM = notesVM;
+            ViewModel = vm;
         }
 
-        public bool CanExecute(object? parameter)
+        public bool CanExecute(object parameter)
         {
-            return true; // Always allow execution for now
+            return true;
         }
 
-        public void Execute(object? parameter)
+        public void Execute(object parameter)
         {
-            NoteVM.CreateNotebook();
+            ViewModel.CreateNotebook();
         }
     }
 }

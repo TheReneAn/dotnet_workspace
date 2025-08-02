@@ -1,4 +1,7 @@
 ﻿using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace EvernoteClone.Model
 {
@@ -7,7 +10,7 @@ namespace EvernoteClone.Model
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         [Indexed]
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public string Name { get; set; }
     }
 }
