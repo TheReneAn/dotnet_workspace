@@ -7,13 +7,13 @@
         xmlns:vm="clr-namespace:EvernoteClone.ViewModel"
         mc:Ignorable="d"
         Title="NotesWindow" Height="450" Width="800">
-    
+
     <Window.Resources>
         <ResourceDictionary>
             <vm:NotesVM x:Key="vm"/>
         </ResourceDictionary>
     </Window.Resources>
-    
+
     <DockPanel DataContext="{StaticResource vm}">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
@@ -21,13 +21,20 @@
                           Command="{Binding NewNotebookCommand}"/>
                 <MenuItem Header="New note"
                           Command="{Binding NewNoteCommand}"
-                          CommandParameter="{Binding SelectedNotebook}"/>
+                          CommandParameter="{Binding SelectedNotebook, 
+                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Separator/>
                 <MenuItem Header="Exit"
                           Click="MenuItem_Click"/>
             </MenuItem>
         </Menu>
-        
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusTextBlock"/>
+            </StatusBarItem>
+        </StatusBar>
+
         <ListView DockPanel.Dock="Left"
                   Width="140"
                   SelectedValue="{Binding SelectedNotebook, Mode=TwoWay}"
@@ -38,7 +45,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+
         <ListView DockPanel.Dock="Left"
                   Width="140"
                   ItemsSource="{Binding Notes}">
@@ -48,13 +55,23 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
+
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
                 <Button Content="Speech"
                         Click="SpeechButton_Click"/>
+
+                <Button x:Name="BoldButton"
+                        Click="BoldButton_Click">
+                    <TextBlock Text="B"
+                               FontWeight="Bold"/>
+                </Button>
             </ToolBar>
         </ToolBarTray>
-        <Grid/>
+
+        <Grid>
+            <RichTextBox x:Name="ContentRichTextBox"
+                         TextChanged="ContentRichTextBox_TextChanged"/>
+        </Grid>
     </DockPanel>
 </Window>

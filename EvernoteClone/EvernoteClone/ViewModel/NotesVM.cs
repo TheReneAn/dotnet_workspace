@@ -24,8 +24,6 @@ namespace EvernoteClone.ViewModel
         public NewNotebookCommand NewNotebookCommand { get; set; }
         public NewNoteCommand NewNoteCommand { get; set; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public NotesVM()
         {
             NewNoteCommand = new NewNoteCommand(this);
@@ -39,7 +37,7 @@ namespace EvernoteClone.ViewModel
 
         public void CreateNotebook()
         {
-            Notebook newNotebook = new Notebook
+            Notebook newNotebook = new()
             {
                 Name = "Notebook"
             };
@@ -51,7 +49,7 @@ namespace EvernoteClone.ViewModel
 
         public void CreateNote(int notebookId)
         {
-            Note newNote = new Note
+            Note newNote = new()
             {
                 NotebookId = notebookId,
                 CreatedAt = DateTime.Now,
@@ -89,6 +87,7 @@ namespace EvernoteClone.ViewModel
             }
         }
 
+        public event PropertyChangedEventHandler? PropertyChanged;
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
