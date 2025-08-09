@@ -17,7 +17,7 @@ namespace EvernoteClone.ViewModel
             set
             {
                 selectedNotebook = value;
-                OnPropertyChanged("SelectedNotebook");
+                OnPropertyChanged(nameof(SelectedNotebook));
                 GetNotes();
             }
         }
@@ -67,7 +67,7 @@ namespace EvernoteClone.ViewModel
             var notebooks = DatabaseHelper.Read<Notebook>();
 
             Notebooks.Clear();
-            foreach(var notebook in notebooks)
+            foreach (var notebook in notebooks)
             {
                 Notebooks.Add(notebook);
             }

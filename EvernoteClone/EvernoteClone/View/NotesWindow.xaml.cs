@@ -1,6 +1,4 @@
-﻿using Microsoft.CognitiveServices.Speech;
-using Microsoft.CognitiveServices.Speech.Audio;
-using System.Threading.Tasks;
+﻿using System.Speech.Recognition;
 using System.Windows;
 using System.Windows.Documents;
 
@@ -11,9 +9,39 @@ namespace EvernoteClone.View
     /// </summary>
     public partial class NotesWindow : Window
     {
+        SpeechRecognitionEngine recognizer;
+
         public NotesWindow()
         {
             InitializeComponent();
+
+            var currentCulture = (from recognizerInfo in SpeechRecognitionEngine.InstalledRecognizers()
+                                  where recognizerInfo.Culture.Equals(Thread.CurrentThread.CurrentCulture)
+                                  select recognizerInfo).FirstOrDefault();
+
+            if (currentCulture != null)
+            {
+                recognizer = new SpeechRecognitionEngine(currentCulture);
+                recognizer.SetInputToDefaultAudioDevice();
+
+                GrammarBuilder grammarBuilder = new();
+                grammarBuilder.AppendDictation();
+                Grammar grammar = new(grammarBuilder);
+                recognizer.LoadGrammar(grammar);
+
+                recognizer.SpeechRecognized += Recognizer_SpeechRecognized;
+            }
+            else
+            {
+                // Handle case where no recognizer for the current culture is found
+                MessageBox.Show("No speech recognizer found for the current system culture.");
+            }
+        }
+
+        private void Recognizer_SpeechRecognized(object? sender, SpeechRecognizedEventArgs e)
+        {
+            string recognizedText = e.Result.Text;
+            ContentRichTextBox.Document.Blocks.Add(new Paragraph(new Run(recognizedText)));
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)
@@ -21,9 +49,19 @@ namespace EvernoteClone.View
             Application.Current.Shutdown();
         }
 
-        private async Task SpeechButton_Click(object sender, RoutedEventArgs e)
+        bool isRecognizing = false;
+        private void SpeechButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (isRecognizing == false)
+            {
+                recognizer.RecognizeAsync(RecognizeMode.Multiple);
+                isRecognizing = true;
+            }
+            else
+            {
+                recognizer.RecognizeAsyncStop();
+                isRecognizing = false;
+            }
         }
 
         private void ContentRichTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)

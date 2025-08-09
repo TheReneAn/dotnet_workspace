@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -38,28 +38,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "NotesVM.cs",
-              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\ViewModel\\NotesVM.cs",
-              "RelativeDocumentMoniker": "EvernoteClone\\ViewModel\\NotesVM.cs",
-              "ToolTip": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\ViewModel\\NotesVM.cs",
-              "RelativeToolTip": "EvernoteClone\\ViewModel\\NotesVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T20:20:58.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "NotesWindow.xaml.cs",
               "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\View\\NotesWindow.xaml.cs",
               "RelativeDocumentMoniker": "EvernoteClone\\View\\NotesWindow.xaml.cs",
               "ToolTip": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\View\\NotesWindow.xaml.cs",
               "RelativeToolTip": "EvernoteClone\\View\\NotesWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-31T20:09:39.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NotesVM.cs",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\ViewModel\\NotesVM.cs",
+              "RelativeDocumentMoniker": "EvernoteClone\\ViewModel\\NotesVM.cs",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\ViewModel\\NotesVM.cs",
+              "RelativeToolTip": "EvernoteClone\\ViewModel\\NotesVM.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T20:20:58.91Z",
               "EditorCaption": ""
             }
           ]

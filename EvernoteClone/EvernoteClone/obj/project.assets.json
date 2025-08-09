@@ -615,6 +615,28 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "System.Speech/9.0.8": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Speech.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Speech.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Speech.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "System.Text.Encodings.Web/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -1275,6 +1297,35 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "System.Speech/9.0.8": {
+      "sha512": "tBo9CM+4MWYDnTH1oKL5A0dcyTHqr8F+zljbOc/vpRHHmZA7jnZxyqh7uwuICWH9F//IAgwfulTvXlzVy+j8lQ==",
+      "type": "package",
+      "path": "system.speech/9.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Speech.targets",
+        "lib/net462/_._",
+        "lib/net8.0/System.Speech.dll",
+        "lib/net8.0/System.Speech.xml",
+        "lib/net9.0/System.Speech.dll",
+        "lib/net9.0/System.Speech.xml",
+        "lib/netstandard2.0/System.Speech.dll",
+        "lib/netstandard2.0/System.Speech.xml",
+        "runtimes/win/lib/net8.0/System.Speech.dll",
+        "runtimes/win/lib/net8.0/System.Speech.xml",
+        "runtimes/win/lib/net9.0/System.Speech.dll",
+        "runtimes/win/lib/net9.0/System.Speech.xml",
+        "system.speech.9.0.8.nupkg.sha512",
+        "system.speech.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Text.Encodings.Web/6.0.0": {
       "sha512": "Vg8eB5Tawm1IFqj4TVK1czJX89rhFxJo9ELqc/Eiq0eXy13RK00eubyU6TJE6y+GQXjyV5gSfiewDUZjQgSE0w==",
       "type": "package",
@@ -1397,6 +1448,7 @@
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "Microsoft.CognitiveServices.Speech >= 1.45.0",
+      "System.Speech >= 9.0.8",
       "sqlite-net-pcl >= 1.9.172"
     ]
   },
@@ -1454,6 +1506,10 @@
           "Microsoft.CognitiveServices.Speech": {
             "target": "Package",
             "version": "[1.45.0, )"
+          },
+          "System.Speech": {
+            "target": "Package",
+            "version": "[9.0.8, )"
           },
           "sqlite-net-pcl": {
             "target": "Package",

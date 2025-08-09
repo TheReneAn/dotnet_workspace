@@ -55,6 +55,10 @@
               "target": "Package",
               "version": "[1.45.0, )"
             },
+            "System.Speech": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.9.172, )"

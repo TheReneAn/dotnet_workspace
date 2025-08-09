@@ -11,6 +11,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.CognitiveServices.Speech" Version="1.45.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+    <PackageReference Include="System.Speech" Version="9.0.8" />
   </ItemGroup>
 
 </Project>
