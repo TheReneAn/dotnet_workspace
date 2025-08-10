@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1YjS6naUeWE=",
+  "dgSpecHash": "GR5zwu+FNvs=",
   "success": true,
   "projectFilePath": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\EvernoteClone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ReneHOME\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.45.0\\microsoft.cognitiveservices.speech.1.45.0.nupkg.sha512",
+    "C:\\Users\\ReneHOME\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.135\\microsoft.xaml.behaviors.wpf.1.1.135.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlite-net-pcl\\1.9.172\\sqlite-net-pcl.1.9.172.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.1.2\\sqlitepclraw.bundle_green.2.1.2.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",

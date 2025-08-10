@@ -11,8 +11,10 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EvernoteClone.View
 {
@@ -31,32 +33,52 @@ namespace EvernoteClone.View
         {
             InitializeComponent();
 
-            // Find the speech recognizer that matches the current system's culture.
-            var currentCulture = (from recognizerInfo in SpeechRecognitionEngine.InstalledRecognizers()
-                                  where recognizerInfo.Culture.Equals(Thread.CurrentThread.CurrentCulture)
-                                  select recognizerInfo).FirstOrDefault();
-
-            if (currentCulture != null)
+            try
             {
-                // Initialize the recognizer with the found culture.
-                recognizer = new SpeechRecognitionEngine(currentCulture);
+                // Find the speech recognizer that matches the current system's culture.
+                var currentCulture = (from recognizerInfo in SpeechRecognitionEngine.InstalledRecognizers()
+                                      where recognizerInfo.Culture.Equals(Thread.CurrentThread.CurrentCulture)
+                                      select recognizerInfo).FirstOrDefault();
 
-                // Set the audio input to the default microphone.
-                recognizer.SetInputToDefaultAudioDevice();
+                if (currentCulture != null)
+                {
+                    // Initialize the recognizer with the found culture.
+                    recognizer = new SpeechRecognitionEngine(currentCulture);
 
-                // Create a grammar for dictation (free-form speech).
-                GrammarBuilder grammarBuilder = new();
-                grammarBuilder.AppendDictation();
-                Grammar grammar = new(grammarBuilder);
-                recognizer.LoadGrammar(grammar);
+                    // Set the audio input to the default microphone.
+                    recognizer.SetInputToDefaultAudioDevice();
 
-                // Subscribe to the event that fires when speech is recognized.
-                recognizer.SpeechRecognized += Recognizer_SpeechRecognized;
+                    // Create a grammar for dictation (free-form speech).
+                    GrammarBuilder grammarBuilder = new();
+                    grammarBuilder.AppendDictation();
+                    Grammar grammar = new(grammarBuilder);
+                    recognizer.LoadGrammar(grammar);
+
+                    // Subscribe to the event that fires when speech is recognized.
+                    recognizer.SpeechRecognized += Recognizer_SpeechRecognized;
+                }
+                else
+                {
+                    // Display a message if no compatible speech recognizer is found.
+                    MessageBox.Show("A speech recognizer could not be found for your system's current culture. The voice input feature will be unavailable.", "Speech Recognition Unavailable", MessageBoxButton.OK, MessageBoxImage.Warning);
+
+                    // The SpeechToggleButton is now accessible after InitializeComponent()
+                    if (SpeechButton != null)
+                    {
+                        SpeechButton.IsEnabled = false;
+                    }
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Display a message if no compatible speech recognizer is found.
-                MessageBox.Show("No speech recognizer found for the current system culture.");
+                // Handle exceptions that occur during initialization, such as no microphone connected.
+                MessageBox.Show($"Voice recognition initialization failed. Please ensure a microphone is connected and properly configured.\n\nError details: {ex.Message}", "Voice Input Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                // Disable the speech button to prevent the user from trying to use it.
+                if (SpeechButton != null)
+                {
+                    SpeechButton.IsEnabled = false;
+                }
             }
 
             // --- UI Setup ---
