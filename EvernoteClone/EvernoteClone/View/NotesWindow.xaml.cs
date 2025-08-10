@@ -84,8 +84,21 @@ namespace EvernoteClone.View
             FontFamilyComboBox.ItemsSource = fontFamilies;
 
             // Populate the font size ComboBox with a list of common sizes.
-            List<double> fontSizes = new List<double>() { 8, 9, 10, 11, 12, 15, 28, 48, 72 };
+            List<double> fontSizes = [8, 9, 10, 11, 12, 15, 28, 48, 72];
             FontSizeComboBox.ItemsSource = fontSizes;
+        }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+
+            if(string.IsNullOrEmpty(App.UserId))
+            {
+                LoginWindow loginWindow = new();
+                loginWindow.ShowDialog();
+                
+                viewModel.GetNotebooks();
+            }
         }
 
         /// <summary>
