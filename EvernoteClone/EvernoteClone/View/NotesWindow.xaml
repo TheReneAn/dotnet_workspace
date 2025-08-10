@@ -19,12 +19,11 @@
     <DockPanel DataContext="{StaticResource vm}">
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
-                <MenuItem Header="New notebook"
+                <MenuItem Header="New Notebook"
                       Command="{Binding NewNotebookCommand}"/>
-                <MenuItem Header="New note"
+                <MenuItem Header="New Note"
                       Command="{Binding NewNoteCommand}"
-                      CommandParameter="{Binding SelectedNotebook, 
-                                        Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                      CommandParameter="{Binding SelectedNotebook}"/>
                 <Separator/>
                 <MenuItem Header="Exit"
                       Click="MenuItem_Click"/>
@@ -40,7 +39,7 @@
         <ListView DockPanel.Dock="Left"
               Background="MidnightBlue"
               Width="140"
-              SelectedValue="{Binding SelectedNotebook, Mode=TwoWay}"
+              SelectedValue="{Binding SelectedNotebook, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
               ItemsSource="{Binding Notebooks}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -69,8 +68,9 @@
         </ListView>
 
         <ListView DockPanel.Dock="Left"
-              Width="140"
-              ItemsSource="{Binding Notes}">
+                  Width="140"
+                  SelectedValue="{Binding SelectedNote, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Notes}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <uc:DisplayNote Note="{Binding}"/>
@@ -80,42 +80,46 @@
 
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
-                <ToggleButton x:Name="SpeechButton"
+                <Button x:Name="SpeechButton"
                               Content="Speech"
                               Click="SpeechButton_Click"/>
 
                 <ToggleButton x:Name="BoldButton"
                               Click="BoldButton_Click">
-                    <TextBox Text="B"
+                    <TextBlock Text="B"
                              FontWeight="Bold"/>
                 </ToggleButton>
 
                 <ToggleButton x:Name="ItalicButton"
-                    Click="ItalicButton_Click">
+                              Click="ItalicButton_Click">
                     <TextBlock Text="I"
                            FontStyle="Italic"/>
                 </ToggleButton>
 
                 <ToggleButton x:Name="UnderlineButton"
-                    Click="UnderlineButton_Click">
+                              Click="UnderlineButton_Click">
                     <TextBlock Text="U"
                            TextDecorations="Underline"/>
                 </ToggleButton>
 
-
                 <ComboBox x:Name="FontFamilyComboBox"
-                  Width="100"
-                  SelectionChanged="FontFamilyComboBox_SelectionChanged"/>
+                          Width="100"
+                          SelectionChanged="FontFamilyComboBox_SelectionChanged"/>
                 <ComboBox x:Name="FontSizeComboBox"
-                  Width="50"
-                  IsEditable="True"
-                  TextBoxBase.TextChanged="FontSizeComboBox_TextChanged"/>
+                          Width="50"
+                          IsEditable="True"
+                          TextBoxBase.TextChanged="FontSizeComboBox_TextChanged"/>
+
+                <Button x:Name="SaveButton"
+                      Content="Save"
+                      Click="SaveButton_Click"/>
             </ToolBar>
         </ToolBarTray>
 
         <Grid>
             <RichTextBox x:Name="ContentRichTextBox"
-                     TextChanged="ContentRichTextBox_TextChanged"/>
+                     TextChanged="ContentRichTextBox_TextChanged"
+                         SelectionChanged="ContentRichTextBox_SelectionChanged"/>
         </Grid>
     </DockPanel>
 </Window>

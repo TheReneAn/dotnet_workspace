@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using EvernoteClone.ViewModel;
+using EvernoteClone.ViewModel.Helpers;
+using System.IO;
 using System.Speech.Recognition;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EvernoteClone.View
 {
@@ -23,6 +15,8 @@ namespace EvernoteClone.View
     /// </summary>
     public partial class NotesWindow : Window
     {
+        NotesVM viewModel;
+
         // SpeechRecognitionEngine to handle voice input.
         private SpeechRecognitionEngine recognizer;
 
@@ -32,6 +26,9 @@ namespace EvernoteClone.View
         public NotesWindow()
         {
             InitializeComponent();
+
+            viewModel = (NotesVM)Resources["vm"];
+            viewModel.SelectedNotebookChanged += ViewModel_SelectedNotebookChanged;
 
             try
             {
@@ -91,7 +88,11 @@ namespace EvernoteClone.View
             FontSizeComboBox.ItemsSource = fontSizes;
         }
 
-        // Event handler for when speech is successfully recognized.
+        /// <summary>
+        /// Event handler for when speech is successfully recognized
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Recognizer_SpeechRecognized(object? sender, SpeechRecognizedEventArgs e)
         {
             // Get the recognized text.
@@ -134,13 +135,44 @@ namespace EvernoteClone.View
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ContentRichTextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        private void ContentRichTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             // Calculate the total number of characters in the document.
             int ammountCharacters = (new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd)).Text.Length;
 
             StatusTextBlock.Text = $"Document Length: {ammountCharacters} characters";
         }
+
+        #region Save and Load
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            string rtfFile = Path.Combine(Environment.CurrentDirectory, $"{viewModel.SelectedNote.Id}.rtf");
+            viewModel.SelectedNote.FileLocation = rtfFile;
+            DatabaseHelper.Update(viewModel.SelectedNote);
+
+            FileStream fileStream = new(rtfFile, FileMode.Create);
+            var contents = new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd);
+            contents.Save(fileStream, DataFormats.Rtf);
+        }
+
+        private void ViewModel_SelectedNotebookChanged(object? sender, EventArgs e)
+        {
+            // Clear the RichTextBox if no file location is set.
+            ContentRichTextBox.Document.Blocks.Clear();
+
+            if (viewModel.SelectedNotebook != null)
+            {
+                if (!string.IsNullOrEmpty(viewModel.SelectedNote.FileLocation))
+                {
+                    FileStream fileStream = new FileStream(viewModel.SelectedNote.FileLocation, FileMode.Open);
+                    var contents = new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd);
+                    contents.Load(fileStream, DataFormats.Rtf);
+                }
+            }
+        }
+
+        #endregion Save and Load
 
         #region ToolBarTray
 
@@ -154,7 +186,7 @@ namespace EvernoteClone.View
             // Check if the button is a ToggleButton and its checked state.
             bool isButtonChecked = ((ToggleButton)sender).IsChecked ?? false;
 
-            if (isButtonChecked == false)
+            if (isButtonChecked)
             {
                 // Apply bold font weight to the selected text.
                 ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Bold);
@@ -176,7 +208,7 @@ namespace EvernoteClone.View
             // Check if the button is a ToggleButton and its checked state.
             bool isButtonChecked = ((ToggleButton)sender).IsChecked ?? false;
 
-            if (isButtonChecked == false)
+            if (isButtonChecked)
             {
                 ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Italic);
             }
