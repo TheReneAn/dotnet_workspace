@@ -1,7 +1,9 @@
 ﻿using EvernoteClone.Model;
 using EvernoteClone.ViewModel.Commends;
+using EvernoteClone.ViewModel.Helpers;
 using System.ComponentModel;
 using System.Windows;
+using System.Windows.Input;
 
 namespace EvernoteClone.ViewModel
 {
@@ -13,9 +15,9 @@ namespace EvernoteClone.ViewModel
         public User User
         {
             get { return user; }
-            set 
-            { 
-                user = value; 
+            set
+            {
+                user = value;
                 OnPropertyChanged(nameof(User));
             }
         }
@@ -119,8 +121,8 @@ namespace EvernoteClone.ViewModel
         public Visibility LoginVis
         {
             get { return loginVis; }
-            set 
-            { 
+            set
+            {
                 loginVis = value;
                 OnPropertyChanged(nameof(LoginVis));
             }
@@ -138,6 +140,7 @@ namespace EvernoteClone.ViewModel
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
+        public event EventHandler Authenticated;
 
         public RegisterCommand RegisterCommand { get; set; }
         public LoginCommand LoginCommand { get; set; }
@@ -171,16 +174,24 @@ namespace EvernoteClone.ViewModel
             }
         }
 
-        public void Login()
+        public async void Login()
         {
-            // TODO: Logic for login
-            MessageBox.Show("Login logic not implemented yet.");
+            bool result = await FirebaseAuthHelper.Login(User);
+
+            if (result)
+            {
+                Authenticated?.Invoke(this, new EventArgs());
+            }
         }
 
-        public void Register()
+        public async void Register()
         {
-            // TODO : Logic for registration
-            MessageBox.Show("Register logic not implemented yet.");
+            bool result = await FirebaseAuthHelper.Register(User);
+
+            if (result)
+            {
+                Authenticated?.Invoke(this, new EventArgs());
+            }
         }
 
         private void OnPropertyChanged(string propertyName)

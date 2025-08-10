@@ -25,20 +25,14 @@ namespace EvernoteClone.ViewModel.Commends
             {
                 return false;
             }
-            if (string.IsNullOrEmpty(user.Username) || string.IsNullOrEmpty(user.Password))
-            {
-                return false;
-            }
-            if (string.IsNullOrEmpty(user.ConfirmPassword))
-            {
-                return false;
-            }
-            if (string.IsNullOrEmpty(user.Name) || string.IsNullOrEmpty(user.Lastname))
-            {
-                return false;
-            }
 
-            return true;
+            // Check all necessary fields and password match for activation
+            return !string.IsNullOrEmpty(user.Username) &&
+                   !string.IsNullOrEmpty(user.Password) &&
+                   !string.IsNullOrEmpty(user.Name) &&
+                   !string.IsNullOrEmpty(user.Lastname) &&
+                   !string.IsNullOrEmpty(user.ConfirmPassword) &&
+                   user.Password == user.ConfirmPassword;
         }
 
         public void Execute(object parameter)
