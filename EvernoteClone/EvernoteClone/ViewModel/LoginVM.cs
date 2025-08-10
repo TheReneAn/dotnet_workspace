@@ -1,5 +1,5 @@
 ﻿using EvernoteClone.Model;
-using EvernoteClone.ViewModel.Commands;
+using EvernoteClone.ViewModel.Commends;
 
 namespace EvernoteClone.ViewModel
 {

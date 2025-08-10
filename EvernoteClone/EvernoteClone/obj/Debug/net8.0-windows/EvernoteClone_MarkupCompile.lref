@@ -2,4 +2,6 @@
 
 FE:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\View\LoginWindow.xaml;;
 FE:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\View\NotesWindow.xaml;;
+FE:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\View\UserControls\DisplayNote.xaml;;
+FE:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\View\UserControls\DisplayNotebook.xaml;;
 

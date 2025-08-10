@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nPWWmkzXglM=",
+  "dgSpecHash": "1YjS6naUeWE=",
   "success": true,
-  "projectFilePath": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\NotesApp.csproj",
+  "projectFilePath": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\EvernoteClone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ReneHOME\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

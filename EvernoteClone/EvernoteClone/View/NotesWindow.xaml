@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EvernoteClone.View"
+        xmlns:uc="clr-namespace:EvernoteClone.View.UserControls"
         xmlns:vm="clr-namespace:EvernoteClone.ViewModel"
         mc:Ignorable="d"
         Title="NotesWindow" Height="450" Width="800">
@@ -18,14 +19,14 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Header="New notebook"
-                          Command="{Binding NewNotebookCommand}"/>
+                      Command="{Binding NewNotebookCommand}"/>
                 <MenuItem Header="New note"
-                          Command="{Binding NewNoteCommand}"
-                          CommandParameter="{Binding SelectedNotebook, 
-                                            Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                      Command="{Binding NewNoteCommand}"
+                      CommandParameter="{Binding SelectedNotebook, 
+                                        Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 <Separator/>
                 <MenuItem Header="Exit"
-                          Click="MenuItem_Click"/>
+                      Click="MenuItem_Click"/>
             </MenuItem>
         </Menu>
 
@@ -36,22 +37,23 @@
         </StatusBar>
 
         <ListView DockPanel.Dock="Left"
-                  Width="140"
-                  SelectedValue="{Binding SelectedNotebook, Mode=TwoWay}"
-                  ItemsSource="{Binding Notebooks}">
+              Background="MidnightBlue"
+              Width="140"
+              SelectedValue="{Binding SelectedNotebook, Mode=TwoWay}"
+              ItemsSource="{Binding Notebooks}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Name}"/>
+                    <uc:DisplayNotebook Notebook="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
         <ListView DockPanel.Dock="Left"
-                  Width="140"
-                  ItemsSource="{Binding Notes}">
+              Width="140"
+              ItemsSource="{Binding Notes}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Title}"/>
+                    <uc:DisplayNote Note="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
@@ -59,40 +61,40 @@
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar>
                 <ToggleButton Content="Speech"
-                        Click="SpeechButton_Click"/>
+                    Click="SpeechButton_Click"/>
 
                 <ToggleButton x:Name="BoldButton"
-                        Click="BoldButton_Click">
+                    Click="BoldButton_Click">
                     <TextBlock Text="B"
-                               FontWeight="Bold"/>
+                           FontWeight="Bold"/>
                 </ToggleButton>
 
                 <ToggleButton x:Name="ItalicButton"
-                        Click="ItalicButton_Click">
+                    Click="ItalicButton_Click">
                     <TextBlock Text="I"
-                               FontStyle="Italic"/>
+                           FontStyle="Italic"/>
                 </ToggleButton>
 
                 <ToggleButton x:Name="UnderlineButton"
-                        Click="UnderlineButton_Click">
+                    Click="UnderlineButton_Click">
                     <TextBlock Text="U"
-                               TextDecorations="Underline"/>
+                           TextDecorations="Underline"/>
                 </ToggleButton>
 
 
                 <ComboBox x:Name="FontFamilyComboBox"
-                      Width="100"
-                      SelectionChanged="FontFamilyComboBox_SelectionChanged"/>
+                  Width="100"
+                  SelectionChanged="FontFamilyComboBox_SelectionChanged"/>
                 <ComboBox x:Name="FontSizeComboBox"
-                      Width="50"
-                      IsEditable="True"
-                      TextBoxBase.TextChanged="FontSizeComboBox_TextChanged"/>
+                  Width="50"
+                  IsEditable="True"
+                  TextBoxBase.TextChanged="FontSizeComboBox_TextChanged"/>
             </ToolBar>
         </ToolBarTray>
 
         <Grid>
             <RichTextBox x:Name="ContentRichTextBox"
-                         TextChanged="ContentRichTextBox_TextChanged"/>
+                     TextChanged="ContentRichTextBox_TextChanged"/>
         </Grid>
     </DockPanel>
 </Window>

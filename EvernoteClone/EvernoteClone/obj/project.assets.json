@@ -1459,9 +1459,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\NotesApp.csproj",
-      "projectName": "NotesApp",
-      "projectPath": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\NotesApp.csproj",
+      "projectUniqueName": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\EvernoteClone.csproj",
+      "projectName": "EvernoteClone",
+      "projectPath": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\EvernoteClone.csproj",
       "packagesPath": "C:\\Users\\ReneHOME\\.nuget\\packages\\",
       "outputPath": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\obj\\",
       "projectStyle": "PackageReference",
