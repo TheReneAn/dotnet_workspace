@@ -18,21 +18,40 @@ namespace EvernoteClone.ViewModel
             get { return selectedNotebook; }
             set
             {
+                // 1. First, check if the selected notebook is actually changing
+                if (selectedNotebook == value)
+                {
+                    return;
+                }
+
                 selectedNotebook = value;
                 OnPropertyChanged(nameof(SelectedNotebook));
+
+                // 2. Reset SelectedNote to null to prevent referencing an old, invalid note
+                SelectedNote = null;
+
+                // 3. Now, get the notes for the new notebook
                 GetNotes();
             }
         }
 
         private Note selectedNote;
-        public Note SelectedNote
+        public Note? SelectedNote
         {
             get { return selectedNote; }
             set
             {
+                if (selectedNote == value)
+                {
+                    return;
+                }
+
                 selectedNote = value;
                 OnPropertyChanged(nameof(selectedNote));
-                SelectedNotebookChanged?.Invoke(this, new EventArgs());
+                if (selectedNote != null)
+                {
+                    SelectedNotebookChanged?.Invoke(this, new EventArgs());
+                }
             }
         }
 
@@ -70,7 +89,7 @@ namespace EvernoteClone.ViewModel
             GetNotebooks();
         }
 
-        public void CreateNotebook()
+        public async void CreateNotebook()
         {
             Notebook newNotebook = new()
             {
@@ -78,12 +97,12 @@ namespace EvernoteClone.ViewModel
                 UserId = App.UserId
             };
 
-            DatabaseHelper.Insert(newNotebook);
+            await DatabaseHelper.Insert(newNotebook);
 
             GetNotebooks();
         }
 
-        public void CreateNote(int notebookId)
+        public async void CreateNote(string notebookId)
         {
             Note newNote = new()
             {
@@ -93,14 +112,14 @@ namespace EvernoteClone.ViewModel
                 Title = $"Note for {DateTime.Now.ToString()}"
             };
 
-            DatabaseHelper.Insert(newNote);
+            await DatabaseHelper.Insert(newNote);
 
             GetNotes();
         }
 
-        public void GetNotebooks()
+        public async void GetNotebooks()
         {
-            var notebooks = DatabaseHelper.Read<Notebook>().Where(n => n.UserId == App.UserId).ToList();
+            var notebooks = (await DatabaseHelper.Read<Notebook>()).Where(n => n.UserId == App.UserId).ToList();
 
             Notebooks.Clear();
             foreach (var notebook in notebooks)
@@ -109,16 +128,26 @@ namespace EvernoteClone.ViewModel
             }
         }
 
-        private void GetNotes()
+        private async void GetNotes()
         {
             if (SelectedNotebook != null)
             {
-                var notes = DatabaseHelper.Read<Note>().Where(n => n.NotebookId == SelectedNotebook.Id).ToList();
+                var notes = (await DatabaseHelper.Read<Note>()).Where(n => n.NotebookId == SelectedNotebook.Id).ToList();
 
                 Notes.Clear();
                 foreach (var note in notes)
                 {
                     Notes.Add(note);
+                }
+
+                if (Notes.Any())
+                {
+                    SelectedNote = Notes.First();
+                }
+                else
+                {
+                    // If the notebook is empty, explicitly set SelectedNote to null.
+                    SelectedNote = null;
                 }
             }
         }

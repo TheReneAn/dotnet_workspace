@@ -10,17 +10,11 @@ using System.Windows.Media;
 
 namespace EvernoteClone.View
 {
-    /// <summary>
-    /// Interaction logic for NotesWindow.xaml
-    /// </summary>
     public partial class NotesWindow : Window
     {
         NotesVM viewModel;
 
-        // SpeechRecognitionEngine to handle voice input.
-        private SpeechRecognitionEngine recognizer;
-
-        // Flag to track whether speech recognition is active
+        private SpeechRecognitionEngine? recognizer;
         bool isRecognizing = false;
 
         public NotesWindow()
@@ -30,36 +24,40 @@ namespace EvernoteClone.View
             viewModel = (NotesVM)Resources["vm"];
             viewModel.SelectedNotebookChanged += ViewModel_SelectedNotebookChanged;
 
+            // Speech recognizer initialization should be done carefully
+            InitializeSpeechRecognizer();
+
+            // --- UI Setup ---
+            var fontFamilies = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            FontFamilyComboBox.ItemsSource = fontFamilies;
+
+            List<double> fontSizes = [8, 9, 10, 11, 12, 15, 28, 48, 72];
+            FontSizeComboBox.ItemsSource = fontSizes;
+        }
+
+        private void InitializeSpeechRecognizer()
+        {
             try
             {
-                // Find the speech recognizer that matches the current system's culture.
                 var currentCulture = (from recognizerInfo in SpeechRecognitionEngine.InstalledRecognizers()
                                       where recognizerInfo.Culture.Equals(Thread.CurrentThread.CurrentCulture)
                                       select recognizerInfo).FirstOrDefault();
 
                 if (currentCulture != null)
                 {
-                    // Initialize the recognizer with the found culture.
                     recognizer = new SpeechRecognitionEngine(currentCulture);
-
-                    // Set the audio input to the default microphone.
                     recognizer.SetInputToDefaultAudioDevice();
 
-                    // Create a grammar for dictation (free-form speech).
                     GrammarBuilder grammarBuilder = new();
                     grammarBuilder.AppendDictation();
                     Grammar grammar = new(grammarBuilder);
                     recognizer.LoadGrammar(grammar);
 
-                    // Subscribe to the event that fires when speech is recognized.
                     recognizer.SpeechRecognized += Recognizer_SpeechRecognized;
                 }
                 else
                 {
-                    // Display a message if no compatible speech recognizer is found.
                     MessageBox.Show("A speech recognizer could not be found for your system's current culture. The voice input feature will be unavailable.", "Speech Recognition Unavailable", MessageBoxButton.OK, MessageBoxImage.Warning);
-
-                    // The SpeechToggleButton is now accessible after InitializeComponent()
                     if (SpeechButton != null)
                     {
                         SpeechButton.IsEnabled = false;
@@ -68,117 +66,104 @@ namespace EvernoteClone.View
             }
             catch (Exception ex)
             {
-                // Handle exceptions that occur during initialization, such as no microphone connected.
                 MessageBox.Show($"Voice recognition initialization failed. Please ensure a microphone is connected and properly configured.\n\nError details: {ex.Message}", "Voice Input Error", MessageBoxButton.OK, MessageBoxImage.Error);
-
-                // Disable the speech button to prevent the user from trying to use it.
                 if (SpeechButton != null)
                 {
                     SpeechButton.IsEnabled = false;
                 }
+                recognizer = null; // Ensure recognizer is null on failure
             }
-
-            // --- UI Setup ---
-            // Populate the font family ComboBox with system fonts.
-            var fontFamilies = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
-            FontFamilyComboBox.ItemsSource = fontFamilies;
-
-            // Populate the font size ComboBox with a list of common sizes.
-            List<double> fontSizes = [8, 9, 10, 11, 12, 15, 28, 48, 72];
-            FontSizeComboBox.ItemsSource = fontSizes;
         }
 
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
 
-            if(string.IsNullOrEmpty(App.UserId))
+            if (string.IsNullOrEmpty(App.UserId))
             {
                 LoginWindow loginWindow = new();
                 loginWindow.ShowDialog();
-                
+
                 viewModel.GetNotebooks();
             }
         }
 
-        /// <summary>
-        /// Event handler for when speech is successfully recognized
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void Recognizer_SpeechRecognized(object? sender, SpeechRecognizedEventArgs e)
         {
-            // Get the recognized text.
             string recognizedText = e.Result.Text;
-            // Append the recognized text as a new paragraph in the RichTextBox.
-            // Assuming 'ContentRichTextBox' is the name of your RichTextBox.
             ContentRichTextBox.Document.Blocks.Add(new Paragraph(new Run(recognizedText)));
         }
 
-        // Event handler for the 'Exit' menu item.
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            // Shut down the application.
             Application.Current.Shutdown();
         }
 
-        /// <summary>
-        /// Event handler for the 'Speech' button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void SpeechButton_Click(object sender, RoutedEventArgs e)
         {
+            // Null-check added for recognizer
+            if (recognizer == null)
+            {
+                MessageBox.Show("Speech recognizer is not initialized.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if (isRecognizing == false)
             {
-                // Start continuous asynchronous speech recognition.
                 recognizer.RecognizeAsync(RecognizeMode.Multiple);
                 isRecognizing = true;
             }
             else
             {
-                // Stop the asynchronous speech recognition.
                 recognizer.RecognizeAsyncStop();
                 isRecognizing = false;
             }
         }
 
-        /// <summary>
-        /// Event handler for when the RichTextBox content changes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ContentRichTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // Calculate the total number of characters in the document.
             int ammountCharacters = (new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd)).Text.Length;
-
             StatusTextBlock.Text = $"Document Length: {ammountCharacters} characters";
         }
 
         #region Save and Load
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            // Null-check for SelectedNote
+            if (viewModel.SelectedNote == null)
+            {
+                MessageBox.Show("Please select or create a note before saving.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             string rtfFile = Path.Combine(Environment.CurrentDirectory, $"{viewModel.SelectedNote.Id}.rtf");
             viewModel.SelectedNote.FileLocation = rtfFile;
-            DatabaseHelper.Update(viewModel.SelectedNote);
 
-            FileStream fileStream = new(rtfFile, FileMode.Create);
-            var contents = new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd);
-            contents.Save(fileStream, DataFormats.Rtf);
+            // Wait for the async update to complete
+            bool isUpdated = await DatabaseHelper.Update(viewModel.SelectedNote);
+            if (isUpdated)
+            {
+                FileStream fileStream = new(rtfFile, FileMode.Create);
+                var contents = new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd);
+                contents.Save(fileStream, DataFormats.Rtf);
+            }
+            else
+            {
+                MessageBox.Show("Failed to save the note to the database.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void ViewModel_SelectedNotebookChanged(object? sender, EventArgs e)
         {
-            // Clear the RichTextBox if no file location is set.
             ContentRichTextBox.Document.Blocks.Clear();
 
-            if (viewModel.SelectedNotebook != null)
+            // Null-check for SelectedNote
+            if (viewModel.SelectedNote != null)
             {
-                if (!string.IsNullOrEmpty(viewModel.SelectedNote.FileLocation))
+                if (!string.IsNullOrEmpty(viewModel.SelectedNote.FileLocation) && File.Exists(viewModel.SelectedNote.FileLocation))
                 {
-                    FileStream fileStream = new FileStream(viewModel.SelectedNote.FileLocation, FileMode.Open);
+                    FileStream fileStream = new(viewModel.SelectedNote.FileLocation, FileMode.Open);
                     var contents = new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd);
                     contents.Load(fileStream, DataFormats.Rtf);
                 }
@@ -189,92 +174,81 @@ namespace EvernoteClone.View
 
         #region ToolBarTray
 
-        /// <summary>
-        /// Event handler for the 'Bold' button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void BoldButton_Click(object sender, RoutedEventArgs e)
         {
-            // Check if the button is a ToggleButton and its checked state.
-            bool isButtonChecked = ((ToggleButton)sender).IsChecked ?? false;
-
-            if (isButtonChecked)
+            if (viewModel.SelectedNote == null)
             {
-                // Apply bold font weight to the selected text.
-                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Bold);
+                return;
             }
-            else
+
+            if (sender is ToggleButton toggleButton)
             {
-                // Apply normal font weight to the selected text.
-                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Normal);
+                var isButtonChecked = toggleButton.IsChecked ?? false;
+                if (isButtonChecked)
+                {
+                    ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Bold);
+                }
+                else
+                {
+                    ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Normal);
+                }
             }
         }
 
-        /// <summary>
-        /// Event handler for the 'Italic' button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ItalicButton_Click(object sender, RoutedEventArgs e)
         {
-            // Check if the button is a ToggleButton and its checked state.
-            bool isButtonChecked = ((ToggleButton)sender).IsChecked ?? false;
-
-            if (isButtonChecked)
+            if (sender is ToggleButton toggleButton)
             {
-                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Italic);
-            }
-            else
-            {
-                // Apply normal font style to the selected text.
-                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Normal);
+                var isButtonChecked = toggleButton.IsChecked ?? false;
+                if (isButtonChecked)
+                {
+                    ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Italic);
+                }
+                else
+                {
+                    ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Normal);
+                }
             }
         }
 
-        /// <summary>
-        /// Event handler for the 'Underline' button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void UnderlineButton_Click(object sender, RoutedEventArgs e)
         {
-            // Check if the button is a ToggleButton and its checked state.
-            bool isButtonChecked = ((ToggleButton)sender).IsChecked ?? false;
-
-            if (isButtonChecked)
+            if (sender is ToggleButton toggleButton)
             {
-                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
-            }
-            else
-            {
-                ((TextDecorationCollection)ContentRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty)).TryRemove(TextDecorations.Underline, out TextDecorationCollection textDecorations);
-                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, textDecorations);
+                var isButtonChecked = toggleButton.IsChecked ?? false;
+                if (isButtonChecked)
+                {
+                    ContentRichTextBox.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
+                }
+                else
+                {
+                    ((TextDecorationCollection)ContentRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty))
+                        ?.TryRemove(TextDecorations.Underline, out var textDecorations);
+                    ContentRichTextBox.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, textDecorations);
+                }
             }
         }
 
-        /// <summary>
-        /// Event handler for when the RichTextBox selection changes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void ContentRichTextBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
             // Bold
             var selectedWeight = ContentRichTextBox.Selection.GetPropertyValue(Inline.FontWeightProperty);
-            BoldButton.IsChecked = (selectedWeight != DependencyProperty.UnsetValue) && selectedWeight.Equals(FontWeights.Bold);
+            BoldButton.IsChecked = (selectedWeight is FontWeight fontWeight) && fontWeight == FontWeights.Bold;
 
             // Italic
             var selectedStyle = ContentRichTextBox.Selection.GetPropertyValue(Inline.FontStyleProperty);
-            ItalicButton.IsChecked = (selectedWeight != DependencyProperty.UnsetValue) && (selectedStyle.Equals(FontStyles.Italic));
+            ItalicButton.IsChecked = (selectedStyle is FontStyle fontStyle) && fontStyle == FontStyles.Italic;
 
             // Underline
-            var selectedDecorations = ContentRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty);
-            UnderlineButton.IsChecked = (selectedWeight != DependencyProperty.UnsetValue) && (selectedDecorations.Equals(TextDecorations.Underline));
+            var selectedDecorations = ContentRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty) as TextDecorationCollection;
+            UnderlineButton.IsChecked = selectedDecorations?.Any(d => d.Location == TextDecorationLocation.Underline) ?? false;
 
             // Font Family and Size
             FontFamilyComboBox.SelectedItem = ContentRichTextBox.Selection.GetPropertyValue(Inline.FontFamilyProperty);
-            FontSizeComboBox.Text = ContentRichTextBox.Selection.GetPropertyValue(Inline.FontSizeProperty).ToString();
+
+            // Null check for FontSize property value
+            var fontSizeProperty = ContentRichTextBox.Selection.GetPropertyValue(Inline.FontSizeProperty);
+            FontSizeComboBox.Text = (fontSizeProperty is double size) ? size.ToString() : string.Empty;
         }
 
         #endregion ToolBarTray
@@ -283,17 +257,18 @@ namespace EvernoteClone.View
 
         private void FontFamilyComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            if (FontFamilyComboBox.SelectedItem != null)
+            if (FontFamilyComboBox.SelectedItem is FontFamily selectedFontFamily)
             {
-                // Apply the selected font family to the selected text in the RichTextBox.
-                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, FontFamilyComboBox.SelectedItem);
+                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontFamilyProperty, selectedFontFamily);
             }
         }
 
         private void FontSizeComboBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            // Apply the selected font size to the selected text in the RichTextBox.
-            ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontSizeProperty, FontSizeComboBox.Text);
+            if (double.TryParse(FontSizeComboBox.Text, out double newSize))
+            {
+                ContentRichTextBox.Selection.ApplyPropertyValue(Inline.FontSizeProperty, newSize);
+            }
         }
 
         #endregion ComboBoxes
