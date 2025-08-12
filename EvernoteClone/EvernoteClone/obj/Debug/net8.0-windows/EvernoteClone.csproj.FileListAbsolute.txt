@@ -141,3 +141,6 @@ E:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\obj\Debug\net8.0-win
 E:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\obj\Debug\net8.0-windows\ref\EvernoteClone.dll
 E:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
 E:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+E:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\bin\Debug\net8.0-windows\Azure.Storage.Blobs.dll
+E:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\bin\Debug\net8.0-windows\Azure.Storage.Common.dll
+E:\Programming\dotnet_workspace\EvernoteClone\EvernoteClone\bin\Debug\net8.0-windows\System.IO.Hashing.dll

@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Documents;
 using System.Windows.Media;
+using Azure.Storage.Blobs;
 
 namespace EvernoteClone.View
 {
@@ -130,42 +131,57 @@ namespace EvernoteClone.View
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            // Null-check for SelectedNote
-            if (viewModel.SelectedNote == null)
-            {
-                MessageBox.Show("Please select or create a note before saving.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
+            string fileName = $"{viewModel.SelectedNote.Id}.rtf";
+            string rtfFile = Path.Combine(Environment.CurrentDirectory, fileName);
 
-            string rtfFile = Path.Combine(Environment.CurrentDirectory, $"{viewModel.SelectedNote.Id}.rtf");
-            viewModel.SelectedNote.FileLocation = rtfFile;
-
-            // Wait for the async update to complete
-            bool isUpdated = await DatabaseHelper.Update(viewModel.SelectedNote);
-            if (isUpdated)
+            using (FileStream fileStream = new(rtfFile, FileMode.Create))
             {
-                FileStream fileStream = new(rtfFile, FileMode.Create);
                 var contents = new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd);
                 contents.Save(fileStream, DataFormats.Rtf);
             }
-            else
-            {
-                MessageBox.Show("Failed to save the note to the database.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+
+            viewModel.SelectedNote.FileLocation = await UpdateFile(rtfFile, fileName);
+            await DatabaseHelper.Update(viewModel.SelectedNote);
         }
 
-        private void ViewModel_SelectedNotebookChanged(object? sender, EventArgs e)
+        /// <summary>
+        /// Microsoft Azure Blob Storage connection string and container name are hardcoded for demonstration purposes.
+        /// </summary>
+        /// <param name="rtfFilesPath"></param>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        private async Task<string> UpdateFile(string rtfFilesPath, string fileName)
+        {
+            // Access Key
+            string connectionString = "";
+            string containerName = "notes";
+
+            var container = new BlobContainerClient(connectionString, containerName);
+            // container.CreateIfNotExistsAsync();
+
+            var blobClient = container.GetBlobClient(fileName);
+            await blobClient.UploadAsync(rtfFilesPath);
+
+            // URL to the uploaded file
+            return $"https://evernotestorage2025.blob.core.windows.net/notes/{fileName}";
+        }
+
+        private async void ViewModel_SelectedNotebookChanged(object? sender, EventArgs e)
         {
             ContentRichTextBox.Document.Blocks.Clear();
 
             // Null-check for SelectedNote
             if (viewModel.SelectedNote != null)
             {
-                if (!string.IsNullOrEmpty(viewModel.SelectedNote.FileLocation) && File.Exists(viewModel.SelectedNote.FileLocation))
+                if (!string.IsNullOrEmpty(viewModel.SelectedNote.FileLocation))
                 {
-                    FileStream fileStream = new(viewModel.SelectedNote.FileLocation, FileMode.Open);
-                    var contents = new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd);
-                    contents.Load(fileStream, DataFormats.Rtf);
+                    string donwloadPath = $"{viewModel.SelectedNote.Id}.rtf";
+                    await new BlobClient(new Uri(viewModel.SelectedNote.FileLocation)).DownloadToAsync(donwloadPath);
+                    using (FileStream fileStream = new(donwloadPath, FileMode.Open))
+                    {
+                        var contents = new TextRange(ContentRichTextBox.Document.ContentStart, ContentRichTextBox.Document.ContentEnd);
+                        contents.Load(fileStream, DataFormats.Rtf);
+                    }
                 }
             }
         }
@@ -222,8 +238,7 @@ namespace EvernoteClone.View
                 }
                 else
                 {
-                    ((TextDecorationCollection)ContentRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty))
-                        ?.TryRemove(TextDecorations.Underline, out var textDecorations);
+                    ((TextDecorationCollection)ContentRichTextBox.Selection.GetPropertyValue(Inline.TextDecorationsProperty)).TryRemove(TextDecorations.Underline, out TextDecorationCollection textDecorations);
                     ContentRichTextBox.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, textDecorations);
                 }
             }

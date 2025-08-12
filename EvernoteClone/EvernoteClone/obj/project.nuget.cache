@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ogbPikwfbLA=",
+  "dgSpecHash": "n8jscy4l3I4=",
   "success": true,
   "projectFilePath": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\EvernoteClone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ReneHOME\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
+    "C:\\Users\\ReneHOME\\.nuget\\packages\\azure.storage.blobs\\12.25.0\\azure.storage.blobs.12.25.0.nupkg.sha512",
+    "C:\\Users\\ReneHOME\\.nuget\\packages\\azure.storage.common\\12.24.0\\azure.storage.common.12.24.0.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.45.0\\microsoft.cognitiveservices.speech.1.45.0.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.135\\microsoft.xaml.behaviors.wpf.1.1.135.nupkg.sha512",
@@ -16,6 +18,7 @@
     "C:\\Users\\ReneHOME\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.2\\sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\system.clientmodel\\1.1.0\\system.clientmodel.1.1.0.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "C:\\Users\\ReneHOME\\.nuget\\packages\\system.io.hashing\\8.0.0\\system.io.hashing.8.0.0.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\system.memory.data\\6.0.0\\system.memory.data.6.0.0.nupkg.sha512",
     "C:\\Users\\ReneHOME\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
