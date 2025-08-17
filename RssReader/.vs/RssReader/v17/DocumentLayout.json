@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Programming\\dotnet_workspace\\RssReader\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|e:\\programming\\dotnet_workspace\\rssreader\\rssreader\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|solutionrelative:rssreader\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|e:\\programming\\dotnet_workspace\\rssreader\\rssreader\\viewmodel\\rsshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|solutionrelative:rssreader\\viewmodel\\rsshelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|e:\\programming\\dotnet_workspace\\rssreader\\rssreader\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|solutionrelative:rssreader\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|e:\\programming\\dotnet_workspace\\rssreader\\rssreader\\viewmodel\\mainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|solutionrelative:rssreader\\viewmodel\\mainvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|e:\\programming\\dotnet_workspace\\rssreader\\rssreader\\dependencyinjector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|solutionrelative:rssreader\\dependencyinjector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|e:\\programming\\dotnet_workspace\\rssreader\\rssreader\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{87CF79D5-F391-4518-B93F-49612AAEB56E}|RssReader\\RssReader.csproj|solutionrelative:rssreader\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\App.xaml.cs",
+              "RelativeDocumentMoniker": "RssReader\\App.xaml.cs",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\App.xaml.cs",
+              "RelativeToolTip": "RssReader\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T21:29:54.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "RssReader\\MainWindow.xaml.cs",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\MainWindow.xaml.cs",
+              "RelativeToolTip": "RssReader\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T19:40:13.816Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DependencyInjector.cs",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\DependencyInjector.cs",
+              "RelativeDocumentMoniker": "RssReader\\DependencyInjector.cs",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\DependencyInjector.cs",
+              "RelativeToolTip": "RssReader\\DependencyInjector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T19:28:16.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainVM.cs",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\ViewModel\\MainVM.cs",
+              "RelativeDocumentMoniker": "RssReader\\ViewModel\\MainVM.cs",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\ViewModel\\MainVM.cs",
+              "RelativeToolTip": "RssReader\\ViewModel\\MainVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T19:21:02.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RssHelper.cs",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\ViewModel\\RssHelper.cs",
+              "RelativeDocumentMoniker": "RssReader\\ViewModel\\RssHelper.cs",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\ViewModel\\RssHelper.cs",
+              "RelativeToolTip": "RssReader\\ViewModel\\RssHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T18:41:35.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "RssReader\\MainWindow.xaml",
+              "ToolTip": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\MainWindow.xaml",
+              "RelativeToolTip": "RssReader\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-08-17T17:21:22.612Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

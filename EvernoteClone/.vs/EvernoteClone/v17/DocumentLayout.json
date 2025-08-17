@@ -47,8 +47,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-10T22:07:00.006Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -61,8 +60,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-10T23:22:07.589Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -72,7 +70,7 @@
               "RelativeDocumentMoniker": "EvernoteClone\\View\\NotesWindow.xaml.cs",
               "ToolTip": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\View\\NotesWindow.xaml.cs",
               "RelativeToolTip": "EvernoteClone\\View\\NotesWindow.xaml.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAuwJcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAA+wK8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-14T01:51:45.077Z",
               "IsPinned": true,
@@ -87,8 +85,7 @@
               "ToolTip": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\View\\LoginWindow.xaml",
               "RelativeToolTip": "EvernoteClone\\View\\LoginWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-14T01:51:39.564Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T01:51:39.564Z"
             },
             {
               "$type": "Document",
@@ -99,8 +96,7 @@
               "ToolTip": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\View\\NotesWindow.xaml",
               "RelativeToolTip": "EvernoteClone\\View\\NotesWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-14T01:09:53.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T01:09:53.757Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "ToolTip": "E:\\Programming\\dotnet_workspace\\EvernoteClone\\EvernoteClone\\EvernoteClone.csproj",
               "RelativeToolTip": "EvernoteClone\\EvernoteClone.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-08-14T01:47:38.878Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T01:47:38.878Z"
             }
           ]
         }

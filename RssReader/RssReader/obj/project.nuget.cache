@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "CGkIVitOqy4=",
+  "success": true,
+  "projectFilePath": "E:\\Programming\\dotnet_workspace\\RssReader\\RssReader\\RssReader.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ReneHOME\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\ReneHOME\\.nuget\\packages\\unity\\5.11.10\\unity.5.11.10.nupkg.sha512"
+  ],
+  "logs": []
+}
