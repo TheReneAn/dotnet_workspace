@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:Calculator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="numbersColor" Color="#444444"/>
-        <SolidColorBrush x:Key="operatorsColor" Color="Orange"/>
-        <SolidColorBrush x:Key="foregroundColor" Color="White"/>
+        <SolidColorBrush x:Key="NumbersColor" Color="#444444"/>
+        <SolidColorBrush x:Key="OperatorsColor" Color="Orange"/>
+        <SolidColorBrush x:Key="ForegroundColor" Color="White"/>
 
         <Style TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
@@ -14,18 +14,18 @@
             <Setter Property="Margin" Value="5"/>
         </Style>
 
-        <Style TargetType="Button" x:Key="numberButtonsStyle">
+        <Style TargetType="Button" x:Key="NumberButtonsStyle">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="25"/>
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="Background" Value="{StaticResource numbersColor}"/>
+            <Setter Property="Background" Value="{StaticResource NumbersColor}"/>
         </Style>
 
-        <Style TargetType="Button" x:Key="operatorButtonsStyle" BasedOn="{StaticResource numberButtonsStyle}">
-            <Setter Property="Background" Value="{StaticResource operatorsColor}"/>
+        <Style TargetType="Button" x:Key="OperatorButtonsStyle" BasedOn="{StaticResource NumberButtonsStyle}">
+            <Setter Property="Background" Value="{StaticResource OperatorsColor}"/>
         </Style>
 
-        <Style TargetType="Button" x:Key="additionalButtonsStyle" BasedOn="{StaticResource numberButtonsStyle}">
+        <Style TargetType="Button" x:Key="AdditionalButtonsStyle" BasedOn="{StaticResource NumberButtonsStyle}">
             <Setter Property="Background" Value="LightGray"/>
             <Setter Property="Foreground" Value="Black"/>
         </Style>

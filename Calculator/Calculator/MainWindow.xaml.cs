@@ -1,14 +1,5 @@
-﻿using System.Diagnostics;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Calculator
 {
@@ -27,7 +18,7 @@ namespace Calculator
             Multiplication,
             Division
         }
-        SelectedOperator selectedOperator;
+        private SelectedOperator _selectedOperator;
 
         /// <summary>
         /// Provides basic mathematical operations, including addition, subtraction, multiplication, and division.
@@ -63,10 +54,10 @@ namespace Calculator
             InitializeComponent();
 
             // Button event handlers
-            acButton.Click += AcButton_Click;
-            negativeButton.Click += NegativeButton_Click;
-            percentageButton.Click += PercentageButton_Click;
-            equalButton.Click += EqualButton_Click;
+            AcButton.Click += AcButton_Click;
+            NegativeButton.Click += NegativeButton_Click;
+            PercentageButton.Click += PercentageButton_Click;
+            EqualButton.Click += EqualButton_Click;
         }
 
         /// <summary>
@@ -76,7 +67,7 @@ namespace Calculator
         /// <param name="e">The event data associated with the click action.</param>
         private void AcButton_Click(object sender, RoutedEventArgs e)
         {
-            resultLabel.Content = "0";
+            ResultLabel.Content = "0";
             _lastNumber = 0;
             _result = 0;
         }
@@ -91,33 +82,35 @@ namespace Calculator
         private void EqualButton_Click(object sender, RoutedEventArgs e)
         {
             // Try to parse the Content as an double
-            if (double.TryParse(resultLabel.Content.ToString(), out double newNumber))
+            if (!double.TryParse(ResultLabel.Content.ToString(), out var newNumber))
             {
-                switch (selectedOperator)
-                {
-                    case SelectedOperator.Adddition:
-                        _result = SimpleMath.Add(_lastNumber, newNumber);
-                        break;
-                    case SelectedOperator.Subtracttion:
-                        _result = SimpleMath.Subtract(_lastNumber, newNumber);
-                        break;
-                    case SelectedOperator.Multiplication:
-                        _result = SimpleMath.Multiply(_lastNumber, newNumber);
-                        break;
-                    case SelectedOperator.Division:
-                        _result = SimpleMath.Divide(_lastNumber, newNumber);
-                        break;
-                }
+                return;
+            }
 
-                // Update the result label with the calculated result
-                if (_result == double.NaN)
-                {
-                    resultLabel.Content = "Error"; // Handle division by zero
-                }
-                else
-                {
-                    resultLabel.Content = _result.ToString();
-                }
+            switch (_selectedOperator)
+            {
+                case SelectedOperator.Adddition:
+                    _result = SimpleMath.Add(_lastNumber, newNumber);
+                    break;
+                case SelectedOperator.Subtracttion:
+                    _result = SimpleMath.Subtract(_lastNumber, newNumber);
+                    break;
+                case SelectedOperator.Multiplication:
+                    _result = SimpleMath.Multiply(_lastNumber, newNumber);
+                    break;
+                case SelectedOperator.Division:
+                    _result = SimpleMath.Divide(_lastNumber, newNumber);
+                    break;
+            }
+
+            // Update the result label with the calculated result
+            if (_result == double.NaN)
+            {
+                ResultLabel.Content = "Error"; // Handle division by zero
+            }
+            else
+            {
+                ResultLabel.Content = _result.ToString();
             }
         }
 
@@ -128,14 +121,14 @@ namespace Calculator
         /// <param name="e">The event data associated with the click action.</param>
         private void NegativeButton_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(resultLabel.Content.ToString(), out _lastNumber))
+            if (double.TryParse(ResultLabel.Content.ToString(), out _lastNumber))
             {
                 _result = -_lastNumber;
-                resultLabel.Content = _result.ToString();
+                ResultLabel.Content = _result.ToString();
             }
             else
             {
-                resultLabel.Content = "Error";
+                ResultLabel.Content = "Error";
             }
         }
 
@@ -146,7 +139,7 @@ namespace Calculator
         /// <param name="e">The event data associated with the click event.</param>
         private void PercentageButton_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(resultLabel.Content.ToString(), out double tempNumber))
+            if (double.TryParse(ResultLabel.Content.ToString(), out var tempNumber))
             {
                 // Calculate the percentage of the last number
                 tempNumber /= 100;
@@ -157,11 +150,11 @@ namespace Calculator
                     // If there was a previous number, multiply the percentage by it
                     tempNumber *= _lastNumber;
                 }
-                resultLabel.Content = tempNumber.ToString();
+                ResultLabel.Content = tempNumber.ToString();
             }
             else
             {
-                resultLabel.Content = "Error"; // If parsing fails, show an error
+                ResultLabel.Content = "Error"; // If parsing fails, show an error
             }
         }
 
@@ -173,7 +166,7 @@ namespace Calculator
         private void PointButton_Click(object sender, RoutedEventArgs e)
         {
             // Get the current content of the result label, default to "0" if null
-            string current = resultLabel.Content?.ToString() ?? "0";
+            var current = ResultLabel.Content?.ToString() ?? "0";
 
             // If the current content already contains a decimal point, do nothing
             if (current.Contains('.'))
@@ -184,12 +177,12 @@ namespace Calculator
             // If the current content is empty or "0", start with "0."
             if (string.IsNullOrEmpty(current) || current == "0")
             {
-                resultLabel.Content = "0.";
+                ResultLabel.Content = "0.";
             }
             else
             {
                 // Otherwise, append a decimal point to the current content
-                resultLabel.Content = current + ".";
+                ResultLabel.Content = current + ".";
             }
         }
 
@@ -204,32 +197,32 @@ namespace Calculator
             if (sender is Button button && button.Content != null)
             {
                 // Try to parse the Content as an double
-                if (double.TryParse(resultLabel.Content.ToString(), out _lastNumber))
+                if (double.TryParse(ResultLabel.Content.ToString(), out _lastNumber))
                 {
-                    resultLabel.Content = "0";
+                    ResultLabel.Content = "0";
                 }
                 else
                 {
-                    resultLabel.Content = "Error";
+                    ResultLabel.Content = "Error";
                 }
             }
 
             // Determine which operator button was clicked and set the selectedOperator accordingly
-            if (sender == multiplicationButton)
+            if (Equals(sender, MultiplicationButton))
             {
-                selectedOperator = SelectedOperator.Multiplication;
+                _selectedOperator = SelectedOperator.Multiplication;
             }
-            if (sender == divisionButton)
+            if (Equals(sender, DivisionButton))
             {
-                selectedOperator = SelectedOperator.Division;
+                _selectedOperator = SelectedOperator.Division;
             }
-            if (sender == plusButton)
+            if (Equals(sender, PlusButton))
             {
-                selectedOperator = SelectedOperator.Adddition;
+                _selectedOperator = SelectedOperator.Adddition;
             }
-            if (sender == minusButton)
+            if (Equals(sender, MinusButton))
             {
-                selectedOperator = SelectedOperator.Subtracttion;
+                _selectedOperator = SelectedOperator.Subtracttion;
             }
         }
 
@@ -241,30 +234,32 @@ namespace Calculator
         private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
             // Check if sender is a Button and its Content is not null
-            if (sender is Button button && button.Content != null)
+            if (sender is not Button button || button.Content == null)
             {
-                // Try to parse the Content as an integer
-                if (int.TryParse(button.Content.ToString(), out int selectedValue))
-                {
-                    // Get the current value of the result label (default to "0" if null)
-                    string current = resultLabel.Content?.ToString() ?? "0";
+                return;
+            }
 
-                    // If the current value is "0", replace it with the selected value
-                    if (current == "0")
-                    {
-                        resultLabel.Content = selectedValue.ToString();
-                    }
-                    else
-                    {
-                        // Otherwise, append the selected value to the current content
-                        resultLabel.Content = current + selectedValue.ToString();
-                    }
+            // Try to parse the Content as an integer
+            if (int.TryParse(button.Content.ToString(), out var selectedValue))
+            {
+                // Get the current value of the result label (default to "0" if null)
+                var current = ResultLabel.Content?.ToString() ?? "0";
+
+                // If the current value is "0", replace it with the selected value
+                if (current == "0")
+                {
+                    ResultLabel.Content = selectedValue.ToString();
                 }
                 else
                 {
-                    // If the button Content is not a number, show a message box
-                    MessageBox.Show("Button content is not a number.");
+                    // Otherwise, append the selected value to the current content
+                    ResultLabel.Content = current + selectedValue.ToString();
                 }
+            }
+            else
+            {
+                // If the button Content is not a number, show a message box
+                MessageBox.Show("Button content is not a number.");
             }
         }
     }
